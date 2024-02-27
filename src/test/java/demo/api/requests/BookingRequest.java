@@ -1,9 +1,9 @@
-package demo.requests;
+package demo.api.requests;
 
 import com.github.wasiqb.boyka.builders.ApiRequest;
 import com.github.wasiqb.boyka.enums.ContentType;
 import com.github.wasiqb.boyka.enums.RequestMethod;
-import demo.pojo.Booking;
+import demo.api.pojo.Booking;
 
 public class BookingRequest {
     public static ApiRequest createBooking (final Booking booking) {

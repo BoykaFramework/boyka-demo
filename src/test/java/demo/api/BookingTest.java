@@ -1,13 +1,13 @@
-package demo;
+package demo.api;
 
 import static com.github.wasiqb.boyka.actions.api.ApiActions.withRequest;
 import static com.github.wasiqb.boyka.manager.ParallelSession.clearSession;
 import static com.github.wasiqb.boyka.manager.ParallelSession.createSession;
 
 import com.github.wasiqb.boyka.enums.PlatformType;
-import demo.pojo.Booking;
-import demo.pojo.BookingDates;
-import demo.requests.BookingRequest;
+import demo.api.pojo.Booking;
+import demo.api.pojo.BookingDates;
+import demo.api.requests.BookingRequest;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;

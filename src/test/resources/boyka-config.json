@@ -1,4 +1,37 @@
 {
+  "ui": {
+    "logging": {
+      "enable": true,
+      "path": "./logs"
+    },
+    "screenshot": {
+      "enabled": true,
+      "extension": "png",
+      "path": "./screenshots",
+      "prefix": "SCR"
+    },
+    "timeout": {
+      "implicit_wait": 1,
+      "explicit_wait": 10,
+      "highlight_delay": 100,
+      "page_load_timeout": 30,
+      "script_timeout": 30
+    },
+    "web": {
+      "test_web": {
+        "browser": "CHROME",
+        "base_url": "https://www.saucedemo.com/",
+        "custom_size": {
+          "width": 1920,
+          "height": 1080
+        },
+        "headless": false,
+        "highlight": true,
+        "resize": "CUSTOM",
+        "target": "LOCAL"
+      }
+    }
+  },
   "api": {
     "test_booking": {
       "base_uri": "https://restful-booker.herokuapp.com",
