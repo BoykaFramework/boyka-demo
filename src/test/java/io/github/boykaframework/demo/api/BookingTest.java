@@ -1,13 +1,13 @@
-package demo.api;
+package io.github.boykaframework.demo.api;
 
-import static com.github.wasiqb.boyka.actions.api.ApiActions.withRequest;
-import static com.github.wasiqb.boyka.manager.ParallelSession.clearSession;
-import static com.github.wasiqb.boyka.manager.ParallelSession.createSession;
+import static io.github.boykaframework.actions.api.ApiActions.withRequest;
+import static io.github.boykaframework.enums.PlatformType.API;
+import static io.github.boykaframework.manager.ParallelSession.clearSession;
+import static io.github.boykaframework.manager.ParallelSession.createSession;
 
-import com.github.wasiqb.boyka.enums.PlatformType;
-import demo.api.pojo.Booking;
-import demo.api.pojo.BookingDates;
-import demo.api.requests.BookingRequest;
+import io.github.boykaframework.demo.api.pojo.Booking;
+import io.github.boykaframework.demo.api.pojo.BookingDates;
+import io.github.boykaframework.demo.api.requests.BookingRequest;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 public class BookingTest {
     @BeforeClass
     public void setupClass () {
-        createSession (PlatformType.API, "test_booking");
+        createSession (API, "test_booking");
     }
 
     @AfterClass

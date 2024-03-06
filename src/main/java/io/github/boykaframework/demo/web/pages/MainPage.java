@@ -1,6 +1,6 @@
-package demo.web.pages;
+package io.github.boykaframework.demo.web.pages;
 
-import com.github.wasiqb.boyka.builders.Locator;
+import io.github.boykaframework.builders.Locator;
 import lombok.Getter;
 import org.openqa.selenium.By;
 

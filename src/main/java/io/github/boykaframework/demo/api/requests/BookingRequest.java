@@ -1,10 +1,12 @@
-package demo.api.requests;
+package io.github.boykaframework.demo.api.requests;
 
-import com.github.wasiqb.boyka.builders.ApiRequest;
-import com.github.wasiqb.boyka.enums.ContentType;
-import com.github.wasiqb.boyka.enums.RequestMethod;
-import demo.api.pojo.Booking;
+import io.github.boykaframework.builders.ApiRequest;
+import io.github.boykaframework.demo.api.pojo.Booking;
+import io.github.boykaframework.enums.ContentType;
+import io.github.boykaframework.enums.RequestMethod;
+import lombok.experimental.UtilityClass;
 
+@UtilityClass
 public class BookingRequest {
     public static ApiRequest createBooking (final Booking booking) {
         return ApiRequest.createRequest ()

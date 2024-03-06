@@ -1,9 +1,9 @@
-package demo.web;
+package io.github.boykaframework.demo.web;
 
-import static com.github.wasiqb.boyka.enums.PlatformType.WEB;
-import static com.github.wasiqb.boyka.manager.ParallelSession.clearSession;
-import static com.github.wasiqb.boyka.manager.ParallelSession.createSession;
-import static demo.web.actions.LoginAction.verifyLogin;
+import static io.github.boykaframework.demo.web.actions.LoginAction.verifyLogin;
+import static io.github.boykaframework.enums.PlatformType.WEB;
+import static io.github.boykaframework.manager.ParallelSession.clearSession;
+import static io.github.boykaframework.manager.ParallelSession.createSession;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;

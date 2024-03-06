@@ -21,14 +21,67 @@
       "test_web": {
         "browser": "CHROME",
         "base_url": "https://www.saucedemo.com/",
-        "custom_size": {
-          "width": 1920,
-          "height": 1080
-        },
         "headless": false,
-        "highlight": true,
-        "resize": "CUSTOM",
         "target": "LOCAL"
+      },
+      "test_chat_web": {
+        "browser": "CHROME",
+        "base_url": "https://chat.appiumpro.com/",
+        "headless": false,
+        "target": "LOCAL"
+      }
+    },
+    "mobile": {
+      "test_chat_android": {
+        "server": {
+          "target": "LOCAL",
+          "session_override": true,
+          "timeout": 30,
+          "logging": {
+            "level": "INFO"
+          },
+          "port": 4723,
+          "driver": "UI_AUTOMATOR",
+          "allow_insecure": [
+            "get_server_logs",
+            "chromedriver_autodownload"
+          ]
+        },
+        "device": {
+          "accept_alerts": true,
+          "clear_files": true,
+          "clear_logs": true,
+          "os": "ANDROID",
+          "swipe": {
+            "distance": 75,
+            "max_swipe_until_found": 5
+          },
+          "type": "VIRTUAL",
+          "application": {
+            "type": "WEB",
+            "install_timeout": 30,
+            "wait_timeout": 30,
+            "browser": "CHROME",
+            "base_url": "https://chat.appiumpro.com/"
+          },
+          "name": "Pixel_8_Pro",
+          "version": "12",
+          "virtual_device": {
+            "connect_keyboard": true,
+            "headless": false,
+            "launch_timeout": 120,
+            "ready_timeout": 60,
+            "name": "Pixel_8_Pro"
+          },
+          "video": {
+            "enabled": true,
+            "path": "./videos",
+            "prefix": "VID",
+            "android": {
+              "bit_rate": 4
+            }
+          }
+        }
       }
     }
   },

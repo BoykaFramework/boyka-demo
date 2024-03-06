@@ -1,4 +1,4 @@
-package demo.api.pojo;
+package io.github.boykaframework.demo.api.pojo;
 
 import lombok.AllArgsConstructor;
 
