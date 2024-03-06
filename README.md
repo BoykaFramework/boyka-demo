@@ -3,7 +3,7 @@
 ## Examples
 
 - Rest API
-    - [Restful Booking Test][rest=api]
+    - [Restful Booking Test][rest-api]
 - Multi-platform Multi-Users
     - [Chat between desktop Chrome browser and Android Chrome browser users][chat-test]
 - Web
