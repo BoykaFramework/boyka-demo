@@ -1,8 +1,10 @@
 package io.github.boykaframework.demo.web.pages;
 
+import static org.openqa.selenium.By.cssSelector;
+import static org.openqa.selenium.By.id;
+
 import io.github.boykaframework.builders.Locator;
 import lombok.Getter;
-import org.openqa.selenium.By;
 
 @Getter
 public class MainPage {
@@ -11,16 +13,15 @@ public class MainPage {
     public static MainPage mainPage () {
         return MAIN_PAGE;
     }
-
     private final Locator menuBurger = Locator.buildLocator ()
         .name ("Menu Icon")
-        .web (By.id ("react-burger-menu-btn"))
+        .web (id ("react-burger-menu-btn"))
         .build ();
 
     public Locator getProduct (final String productName) {
         return Locator.buildLocator ()
             .name (productName)
-            .web (By.cssSelector ("div.inventory_item_name"))
+            .web (cssSelector ("div.inventory_item_name"))
             .filter (e -> e.getText ()
                 .equalsIgnoreCase (productName))
             .build ();

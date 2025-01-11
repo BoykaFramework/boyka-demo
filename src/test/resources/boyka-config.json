@@ -65,7 +65,7 @@
             "base_url": "https://chat.appiumpro.com/"
           },
           "name": "Pixel_8_Pro",
-          "version": "12",
+          "version": "13",
           "virtual_device": {
             "connect_keyboard": true,
             "headless": false,

@@ -4,14 +4,14 @@ import static io.github.boykaframework.actions.elements.ClickableActions.withMou
 import static io.github.boykaframework.actions.elements.ElementActions.onElement;
 import static io.github.boykaframework.actions.elements.TextBoxActions.onTextBox;
 import static io.github.boykaframework.demo.multiplatforms.pages.ChannelPage.channelPage;
+import static io.github.boykaframework.demo.multiplatforms.pages.HomePage.homePage;
 import static io.github.boykaframework.manager.ParallelSession.switchPersona;
 
-import io.github.boykaframework.demo.multiplatforms.pages.HomePage;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class ChatActions {
-    public static void chat (final String userName, final String message, final String friendUserName) {
+    public static void chatAndVerifyMessage (final String userName, final String message, final String friendUserName) {
         switchPersona (userName);
 
         onTextBox (channelPage ().getMessageInput ()).enterText (message);
@@ -34,12 +34,9 @@ public class ChatActions {
         final boolean isFirstParticipant) {
         switchPersona (userName);
 
-        onTextBox (HomePage.homePage ()
-            .getChannel ()).enterText (channel);
-        onTextBox (HomePage.homePage ()
-            .getUserName ()).enterText (userName);
-        withMouse (HomePage.homePage ()
-            .getJoinChannel ()).click ();
+        onTextBox (homePage ().getChannel ()).enterText (channel);
+        onTextBox (homePage ().getUserName ()).enterText (userName);
+        withMouse (homePage ().getJoinChannel ()).click ();
 
         onElement (channelPage ().getSendMessage ()).verifyIsDisplayed ()
             .isTrue ();

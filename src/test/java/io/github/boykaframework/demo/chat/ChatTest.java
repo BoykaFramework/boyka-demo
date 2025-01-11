@@ -1,6 +1,6 @@
 package io.github.boykaframework.demo.chat;
 
-import static io.github.boykaframework.demo.multiplatforms.actions.ChatActions.chat;
+import static io.github.boykaframework.demo.multiplatforms.actions.ChatActions.chatAndVerifyMessage;
 import static io.github.boykaframework.demo.multiplatforms.actions.ChatActions.joinChannel;
 import static io.github.boykaframework.enums.PlatformType.ANDROID;
 import static io.github.boykaframework.enums.PlatformType.WEB;
@@ -12,14 +12,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class ChatTest {
-    private static final String CHANNEL = "Boyka Framework";
-    private static final String USER_1  = "Wasiq Bhamla";
-    private static final String USER_2  = "Faisal Khatri";
+    private static final String ANDROID_USER = "Faisal Khatri";
+    private static final String CHANNEL      = "Boyka Framework";
+    private static final String DESKTOP_USER = "Wasiq Bhamla";
 
     @BeforeClass
     public void setUpClass () {
-        createSession (USER_1, WEB, "test_chat_web");
-        createSession (USER_2, ANDROID, "test_chat_android");
+        createSession (DESKTOP_USER, WEB, "test_chat_web");
+        createSession (ANDROID_USER, ANDROID, "test_chat_android");
     }
 
     @AfterClass
@@ -29,10 +29,10 @@ public class ChatTest {
 
     @Test
     public void testChat () {
-        joinChannel (CHANNEL, USER_1);
-        joinChannel (CHANNEL, USER_2, USER_1);
+        joinChannel (CHANNEL, DESKTOP_USER);
+        joinChannel (CHANNEL, ANDROID_USER, DESKTOP_USER);
 
-        chat (USER_1, "Hi from Desktop Web", USER_2);
-        chat (USER_2, "Hi from Android Web", USER_1);
+        chatAndVerifyMessage (DESKTOP_USER, "Hi from Desktop Web", ANDROID_USER);
+        chatAndVerifyMessage (ANDROID_USER, "Hi from Android Web", DESKTOP_USER);
     }
 }
